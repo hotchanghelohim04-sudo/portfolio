@@ -136,10 +136,50 @@ img {
 }
 
 /* Stronger focus styles for keyboard accessibility */
-a:focus, button:focus, .btn:focus, .hamburger:focus {
+a:focus, button:focus, .btn:focus, .hamburger:focus, .theme-toggle:focus {
     outline: 3px solid rgba(0, 238, 255, 0.6);
     outline-offset: 2px;
     box-shadow: 0 0 0 4px rgba(0, 238, 255, 0.12);
+}
+
+/* Set by script.js while the mobile menu is open */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Skip link: hidden until it receives keyboard focus */
+.skip-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--accent-color);
+    color: var(--primary-dark);
+    font-weight: 600;
+    border-radius: 0 0 var(--border-radius) 0;
+    transform: translateY(-120%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* main only receives focus from the skip link, no ring needed */
+main:focus {
+    outline: none;
+}
+
+/* The fixed header is up to ~142px tall. scroll-padding keeps keyboard focus from ending
+   up hidden under it, and the negative margin on sections cancels it out so anchor links
+   still land 80px from the top (native anchor scrolling, no JavaScript needed). */
+html {
+    scroll-padding-top: 9rem;
+}
+
+section[id] {
+    scroll-margin-top: calc(80px - 9rem);
 }
 
 ul, ol {
@@ -284,9 +324,14 @@ nav {
 .hamburger {
     display: none;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px; /* keeps a comfortable touch target around the 25px bars */
+    color: inherit;
 }
 
 .hamburger .line {
+    display: block;
     width: 25px;
     height: 2px;
     background-color: var(--text-primary);
@@ -344,10 +389,12 @@ nav {
     margin-bottom: var(--spacing-xs);
 }
 
-.hero-text h2 {
+.hero-text .hero-role {
     font-size: var(--fs-m);
     font-weight: 600;
+    line-height: 1.2;
     color: var(--accent-color);
+    max-width: none;
     margin-bottom: var(--spacing-s);
 }
 
@@ -591,6 +638,7 @@ nav {
     color: var(--text-secondary);
     font-weight: 500;
     font-size: var(--fs-xs);
+    overflow-wrap: anywhere; /* safety net for enlarged text: never clip a skill name */
 }
 
 /* ====================
@@ -1333,6 +1381,8 @@ footer {
     height: 50px;
     border-radius: 50%;
     background-color: var(--tertiary-dark);
+    border: none;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1366,12 +1416,38 @@ footer {
     --accent-hover: #003bb5;
     --text-primary: #0b1220;
     --text-secondary: #2b3a4a;
-    --text-muted: #6b7280;
+    --text-muted: #5b6472; /* was #6b7280: 4.3:1 on the card background, now above 4.5:1 */
     --border-color: #e1e8f5;
     --success-color: #0a8a3a;
     --error-color: #c8102e;
     background-color: var(--primary-dark);
     color: var(--text-primary);
+}
+
+/* The header and hero backgrounds are hard-coded dark: without these overrides
+   the light theme shows dark text on a near-black header and hero. */
+.light-theme header {
+    background-color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 10px rgba(11, 18, 32, 0.12);
+}
+
+.light-theme .hero {
+    background: radial-gradient(circle at 10% 20%, rgba(5, 92, 255, 0.1) 0%, var(--primary-dark) 80%);
+}
+
+/* Respect the "reduce motion" system setting */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ====================
@@ -1416,10 +1492,13 @@ footer {
         transition: 0.5s;
         z-index: 900;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        /* off-canvas links must not be reachable with Tab while the menu is closed */
+        visibility: hidden;
     }
 
     .nav-active {
         right: 0;
+        visibility: visible;
     }
 
     .hamburger {
@@ -1437,6 +1516,11 @@ footer {
 
     .hamburger.active .line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* The header is up to ~142px tall in this range; 80px hid part of the title */
+    .hero {
+        padding-top: 9rem;
     }
 
     .hero-content {
@@ -1485,8 +1569,9 @@ footer {
         gap: var(--spacing-m);
     }
 
+    /* 100px was too narrow: "Cybersecurity" and "JavaScript" were clipped on phones */
     .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 
     .projects-grid,
@@ -1537,10 +1622,10 @@ footer {
     }
 
     .hero {
-        padding-top: 60px;
+        padding-top: 8rem; /* the fixed header is 110px tall here; 60px hid the first line of the title */
     }
 
-    .hero-text h2 {
+    .hero-text .hero-role {
         font-size: 1rem;
     }
 

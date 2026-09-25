@@ -63,14 +63,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <!-- Header Navigation -->
     <header>
         <div class="container">
-            <nav>
+            <nav aria-label="Main">
                 <div class="logo">
                     <a href="#home"><span>&lt;</span> TheCrownedHacker <span>/&gt;</span></a>
                 </div>
-                <ul class="nav-links">
+                <!-- The button comes before the list so Tab reaches the links right after opening the menu -->
+                <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -78,17 +86,14 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#article">Article</a></li>
+                    <!--<li><a href="#article">Article</a></li>-->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
             </nav>
         </div>
     </header>
+
+    <main id="main" tabindex="-1">
 
     <!-- Hero Section -->
     <section id="home" class="hero" aria-label="Introduction">
@@ -96,22 +101,22 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hotchang Sappi Helohim Krool</h1>
-                    <h2>Student in Network and Computer Security | Information Security Analyst | Certified Cybersecurity | Penetration Tester</h2>
+                    <p class="hero-role">Student in Network and Computer Security | Information Security Analyst | Certified Cybersecurity | Penetration Tester</p>
                     <p>Welcome to my cybersecurity portfolio. I'm passionate about red and blue teaming and penetration testing.</p>
-                    <div class="cta-buttons" role="navigation" aria-label="Primary call to action">
+                    <div class="cta-buttons">
                         <a href="#contact" class="btn primary-btn">Contact me</a>
                         <a href="assets/Mon_Cv.pdf" download="Mon_CV.pdf" class="btn cv-btn">
-                            <i class="fas fa-file-download"></i> Download CV
+                            <i class="fas fa-file-download" aria-hidden="true"></i> Download CV
                         </a>
                         <!--<a href="#projects" class="btn secondary-btn">View projects</a>-->
                     </div>
-                    <div class="social-icons" aria-label="Social links">
-                        <a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
-                        <a href="https://github.com/helohim" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
-                        <a href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile"><i class="fas fa-shield-alt" aria-hidden="true"></i><span class="sr-only">TryHackMe</span></a>
+                    <div class="social-icons" role="group" aria-label="Social links">
+                        <a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://github.com/helohim" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile (opens in a new tab)"><i class="fas fa-shield-alt" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                <div class="hero-image" aria-hidden="false">
+                <div class="hero-image">
                     <!-- Hero image: loaded first (LCP), two sizes for normal and high-density screens -->
                     <img src="assets/profile-800.jpg"
                          srcset="assets/profile-400.jpg 400w, assets/profile-800.jpg 800w"
@@ -125,28 +130,27 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
+                <h2 id="about-title">About Me</h2>
                 <div class="underline"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>I am a passionate Cybersecurity professional with a strong focus on Penetration Testing. My expertise extends to network security, risk assessment analysis, operation security, recovery after disaster in enterprise and many other qualifications.</p>
-                    <p></p>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <span>hotchanghelohim04@gmail.com</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <span>+237 690546892</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <span>Douala, Cameroon</span>
                     </div>
                 </div>
@@ -155,10 +159,10 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills" aria-labelledby="skills-title">
         <div class="container">
             <div class="section-header">
-                <h2>My Skills</h2>
+                <h2 id="skills-title">My Skills</h2>
                 <div class="underline"></div>
             </div>
             <div class="skills-container">
@@ -207,16 +211,16 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience" aria-labelledby="experience-title">
         <div class="container">
             <div class="section-header">
-                <h2>Experience</h2>
+                <h2 id="experience-title">Experience</h2>
                 <div class="underline"></div>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
                     </div>
                     <div class="timeline-content">
                         <h3>Application Tester</h3>
@@ -233,16 +237,16 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education">
+    <section id="education" class="education" aria-labelledby="education-title">
         <div class="container">
             <div class="section-header">
-                <h2>Education</h2>
+                <h2 id="education-title">Education</h2>
                 <div class="underline"></div>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                     </div>
                     <div class="timeline-content">
                         <h3>Bachelor in Network and Computer Security</h3>
@@ -252,7 +256,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <i class="fas fa-school"></i>
+                        <i class="fas fa-school" aria-hidden="true"></i>
                     </div>
                     <div class="timeline-content">
                         <h3>Terminal D</h3>
@@ -263,7 +267,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <i class="fas fa-school"></i>
+                        <i class="fas fa-school" aria-hidden="true"></i>
                     </div>
                     <div class="timeline-content">
                         <h3>First Class D</h3>
@@ -273,7 +277,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <i class="fas fa-school"></i>
+                        <i class="fas fa-school" aria-hidden="true"></i>
                     </div>
                     <div class="timeline-content">
                         <h3>Spanish Third Grade</h3>
@@ -286,16 +290,16 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
+    <section id="certifications" class="certifications" aria-labelledby="certifications-title">
         <div class="container">
             <div class="section-header">
-                <h2>Certifications</h2>
+                <h2 id="certifications-title">Certifications</h2>
                 <div class="underline"></div>
             </div>
             <div class="certifications-grid">
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Cybersecurity (CC)</h3>
@@ -304,7 +308,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fab fa-google"></i>
+                        <i class="fab fa-google" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Cybersecurity Fundamentals</h3>
@@ -313,7 +317,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Cybersecurity (CC) Domain 1 : Security principles</h3>
@@ -322,7 +326,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Cybersecurity (CC) Domain 2 : Incident Response, Business Continuity and Disaster Recovery Concepts</h3>
@@ -331,7 +335,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Cybersecurity (CC) Domain 3 : Acess Control Concepts</h3>
@@ -340,7 +344,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Cybersecurity (CC) Domain 4 : Network Security</h3>
@@ -349,7 +353,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Cybersecurity (CC) Domain 5 : Security Operations</h3>
@@ -358,7 +362,7 @@
                 </div>
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fas fa-network-wired" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Introduction to Cybersecurity</h3>
@@ -367,7 +371,7 @@
                 </div>
                  <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fas fa-network-wired" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Certified Phishing Prevention Specialist (CPPS)</h3>
@@ -376,7 +380,7 @@
                 </div>
                  <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fas fa-network-wired" aria-hidden="true"></i>
                     </div>
                     <div class="certification-content">
                         <h3>Cybersecurity Career Starter Certification (CCSC)</h3>
@@ -398,7 +402,7 @@
                 <div class="trainings-list">
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>Forage Cybersecurity Job Simulator</h3>
@@ -417,7 +421,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fab fa-aws"></i>
+                            <i class="fab fa-aws" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>AWS Educate</h3>
@@ -429,7 +433,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>TryHackMe Security Paths</h3>
@@ -442,7 +446,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fab fa-microsoft"></i>
+                            <i class="fab fa-microsoft" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>Microsoft Learn Security</h3>
@@ -455,7 +459,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fas fa-laptop-code"></i>
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>SimpliLearn Training</h3>
@@ -469,7 +473,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fas fa-network-wired"></i>
+                            <i class="fas fa-network-wired" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>Cisco NetAcad</h3>
@@ -483,7 +487,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>Udemy Security Courses</h3>
@@ -496,7 +500,7 @@
 
                     <div class="training-item">
                         <div class="training-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         </div>
                         <div class="training-content">
                             <h3>EC-Council CodeRed</h3>
@@ -530,7 +534,7 @@
                         <div class="article-content">
                             <h3>Pixel Poisoning: Hacking Generative AI</h3>
                             <p>A fierce visual defense against generative AI — fight back with poisoned pixels, stealthy watermarks, and adversarial trickery.</p>
-                            <a href="https://infosecwriteups.com/%EF%B8%8F-pixel-poisoning-hacking-generative-ai-11f86cb73a30" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://infosecwriteups.com/%EF%B8%8F-pixel-poisoning-hacking-generative-ai-11f86cb73a30" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="article-card">
@@ -540,7 +544,7 @@
                         <div class="article-content">
                             <h3>SQL Injection Exploitation Made Easy: A Practical Guide to SQLMAP</h3>
                             <p>Learn how to exploit SQL injection vulnerabilities using SQLMAP, an automated penetration testing tool for database security assessment.</p>
-                            <a href="https://infosecwriteups.com/sql-injection-exploitation-made-easy-a-practical-guide-to-sqlmap-055b39a68a94" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://infosecwriteups.com/sql-injection-exploitation-made-easy-a-practical-guide-to-sqlmap-055b39a68a94" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="article-card">
@@ -550,7 +554,7 @@
                         <div class="article-content">
                             <h3>The Art of Wi-Fi Hacking & Protection with Aircrack-ng</h3>
                             <p>A comprehensive guide to hacking and securing Wi-Fi networks using Aircrack-ng, covering practical attack techniques, encryption vulnerabilities, and prevention strategies.</p>
-                            <a href="https://infosecwriteups.com/the-art-of-wi-fi-hacking-protection-with-aircrack-ng-71828972cd6e" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://infosecwriteups.com/the-art-of-wi-fi-hacking-protection-with-aircrack-ng-71828972cd6e" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -562,17 +566,17 @@
     </section> -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
+                <h2 id="contact-title">Get In Touch</h2>
                 <div class="underline"></div>
             </div>
             <div class="contact-container">
                 <div class="contact-info-container">
                     <div class="contact-info-item">
                         <div class="icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                         <div class="text">
                             <h3>Email</h3>
@@ -581,7 +585,7 @@
                     </div>
                     <div class="contact-info-item">
                         <div class="icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                         </div>
                         <div class="text">
                             <h3>Phone</h3>
@@ -590,11 +594,11 @@
                     </div>
                     <div class="contact-info-item">
                         <div class="icon">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </div>
                         <div class="text">
                             <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank">Connect with me</a></p>
+                            <p><a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer">Connect with me<span class="sr-only"> on LinkedIn (opens in a new tab)</span></a></p>
                         </div>
                     </div>
                 </div>
@@ -629,25 +633,26 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#home"><span>&lt;</span> TCH <span>/&gt;</span></a>
+                    <a href="#home" aria-label="Back to top"><span>&lt;</span> TCH <span>/&gt;</span></a>
                 </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/helohim" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://tryhackme.com/p/TheCrownedHacker" target="_blank"><i class="fas fa-shield-alt"></i></a>
+                <div class="footer-social" role="group" aria-label="Social links">
+                    <a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/helohim" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile (opens in a new tab)"><i class="fas fa-shield-alt" aria-hidden="true"></i></a>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <!--<a href="#projects">Projects</a>-->
                     <a href="#contact">Contact</a>
-                </div>
+                </nav>
                 <div class="footer-bottom">
                     <p>&copy; 2025 Hotchang Helohim. All Rights Reserved.</p>
                 </div>
@@ -656,10 +661,10 @@
     </footer>
 
     <!-- Theme toggle -->
-    <div class="theme-toggle">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </div>
+    <button type="button" class="theme-toggle" aria-label="Switch to light theme">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+        <i class="fas fa-sun" aria-hidden="true"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

@@ -21,39 +21,57 @@ if (header) {
 
 // Mobile Navigation
 if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
-        hamburger.classList.toggle('active');
-        document.body.classList.toggle('no-scroll'); // Prevent body scrolling when menu is open
-    });
-}
+    // Keeps the menu state, the button label and aria-expanded in sync
+    const setMenu = (open) => {
+        navLinks.classList.toggle('nav-active', open);
+        hamburger.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+        hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.classList.toggle('no-scroll', open); // Prevent body scrolling when menu is open
+    };
 
-// Close mobile menu when clicking on a link
-if (navLinksItems && navLinksItems.length && navLinks) {
+    hamburger.addEventListener('click', () => {
+        setMenu(!navLinks.classList.contains('nav-active'));
+    });
+
+    // Close mobile menu when clicking on a link
     navLinksItems.forEach(item => {
         item.addEventListener('click', () => {
-            if (navLinks.classList.contains('nav-active')) {
-                navLinks.classList.remove('nav-active');
-                if (hamburger) hamburger.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            }
+            if (navLinks.classList.contains('nav-active')) setMenu(false);
         });
+    });
+
+    // Escape closes the menu and gives focus back to its button
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('nav-active')) {
+            setMenu(false);
+            hamburger.focus();
+        }
     });
 }
 
 // Theme toggle functionality
+const applyTheme = (isLight) => {
+    document.body.classList.toggle('light-theme', isLight);
+
+    // Toggle icons if available
+    if (moonIcon) moonIcon.style.display = isLight ? 'none' : 'block';
+    if (sunIcon) sunIcon.style.display = isLight ? 'block' : 'none';
+
+    // The button's name describes what it will do next
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    }
+};
+
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');
-
-        // Toggle icons if available
-        if (moonIcon) moonIcon.style.display = document.body.classList.contains('light-theme') ? 'none' : 'block';
-        if (sunIcon) sunIcon.style.display = document.body.classList.contains('light-theme') ? 'block' : 'none';
+        const isLight = !document.body.classList.contains('light-theme');
+        applyTheme(isLight);
 
         // Save theme preference to localStorage
-        const theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
         try {
-            localStorage.setItem('theme', theme);
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
         } catch (err) {
             // ignore storage errors (e.g., private mode)
         }
@@ -62,13 +80,14 @@ if (themeToggle) {
 
 // Load saved theme preference
 document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-        if (moonIcon) moonIcon.style.display = 'none';
-        if (sunIcon) sunIcon.style.display = 'block';
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem('theme');
+    } catch (err) {
+        // storage can be blocked (private mode, strict privacy settings)
     }
+
+    if (savedTheme === 'light') applyTheme(true);
 
     // Add animations with delay for elements
     const animateElements = () => {
@@ -151,24 +170,6 @@ if (contactForm) {
         }
     });
 }
-
-// Add smooth scrolling to all links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return; // Skip if href is just "#"
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80, // Adjust for header height
-                behavior: 'smooth'
-            });
-        }
-    });
-});
 
 // Add typing effect to the binary in hero section
 const binaryElement = document.querySelector('.binary');
