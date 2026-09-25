@@ -1,0 +1,18 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Claude Code local files
+.claude/
+
+# Netlify CLI local state
+.netlify/
+
+# Dependencies and secrets (none today, kept out of the repository on purpose)
+node_modules/
+.env
+.env.*

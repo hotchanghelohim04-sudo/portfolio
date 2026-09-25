@@ -1,0 +1,10 @@
+# Keep LF line endings in the repository and in working copies (no CRLF warnings on Windows)
+* text=auto eol=lf
+
+# Binary files: never touch them
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.pdf binary
