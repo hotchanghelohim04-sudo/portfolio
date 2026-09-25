@@ -2,11 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=c568c4b1-f58f-4889-832d-4563686987f2
-     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotchang Sappi Helohim Krool | Cybersecurity Analyst</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio of Hotchang Sappi Helohim Krool: cybersecurity analyst and penetration tester from Douala, Cameroon. Skills, certifications and contact.">
+    <meta name="author" content="Hotchang Sappi Helohim Krool">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://hotchanghelohimportofolio2.netlify.app/">
+    <link rel="icon" href="favicon.ico" sizes="any">
+
+    <!-- Link previews (LinkedIn, WhatsApp, Facebook, X...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hotchang Sappi Helohim Krool | Portfolio">
+    <meta property="og:title" content="Hotchang Sappi Helohim Krool | Cybersecurity Analyst">
+    <meta property="og:description" content="Cybersecurity analyst and penetration tester from Douala, Cameroon. Skills, certifications and contact.">
+    <meta property="og:url" content="https://hotchanghelohimportofolio2.netlify.app/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://hotchanghelohimportofolio2.netlify.app/assets/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Hotchang Sappi Helohim Krool, cybersecurity analyst and penetration tester">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hotchang Sappi Helohim Krool | Cybersecurity Analyst">
+    <meta name="twitter:description" content="Cybersecurity analyst and penetration tester from Douala, Cameroon. Skills, certifications and contact.">
+    <meta name="twitter:image" content="https://hotchanghelohimportofolio2.netlify.app/assets/og-image.jpg">
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hotchang Sappi Helohim Krool",
+        "alternateName": "TheCrownedHacker",
+        "jobTitle": "Cybersecurity Analyst",
+        "url": "https://hotchanghelohimportofolio2.netlify.app/",
+        "image": "https://hotchanghelohimportofolio2.netlify.app/assets/profile-800.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Douala",
+            "addressCountry": "CM"
+        },
+        "knowsAbout": ["Cybersecurity", "Penetration testing", "Ethical hacking", "Network security", "Incident response"],
+        "sameAs": [
+            "https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334",
+            "https://github.com/helohim",
+            "https://tryhackme.com/p/TheCrownedHacker"
+        ]
+    }
+    </script>
+
+    <!-- Performance: open connections to the font and icon hosts early -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -50,7 +101,7 @@
                     <div class="cta-buttons" role="navigation" aria-label="Primary call to action">
                         <a href="#contact" class="btn primary-btn">Contact me</a>
                         <a href="assets/Mon_Cv.pdf" download="Mon_CV.pdf" class="btn cv-btn">
-                            <i class="fas fa-file-download"></i> Télécharger le CV
+                            <i class="fas fa-file-download"></i> Download CV
                         </a>
                         <!--<a href="#projects" class="btn secondary-btn">View projects</a>-->
                     </div>
@@ -61,7 +112,13 @@
                     </div>
                 </div>
                 <div class="hero-image" aria-hidden="false">
-                    <img src="./assets/Photo professionel 1.png" alt="Hotchang Sappi" class="profile-pic">
+                    <!-- Hero image: loaded first (LCP), two sizes for normal and high-density screens -->
+                    <img src="assets/profile-800.jpg"
+                         srcset="assets/profile-400.jpg 400w, assets/profile-800.jpg 800w"
+                         sizes="(max-width: 900px) 280px, 350px"
+                         width="800" height="800"
+                         fetchpriority="high" decoding="async"
+                         alt="Portrait of Hotchang Sappi Helohim Krool in a dark suit and red tie" class="profile-pic">
                 </div>
             </div>
         </div>
