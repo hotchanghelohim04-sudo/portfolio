@@ -7,6 +7,10 @@ const themeToggle = document.querySelector('.theme-toggle');
 const moonIcon = document.querySelector('.fa-moon');
 const sunIcon = document.querySelector('.fa-sun');
 const contactForm = document.getElementById('contact-form');
+const yearElement = document.getElementById('current-year');
+
+// Footer copyright year: always the current year (the HTML holds a fallback for when JavaScript is off)
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 // Header scroll effect (guarded)
 if (header) {
