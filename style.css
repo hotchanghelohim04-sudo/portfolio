@@ -135,6 +135,27 @@ img {
     border: 0 !important;
 }
 
+/* Icons: inline SVG taken from the sprite in index.html (Font Awesome Free, CC BY 4.0).
+   Their size follows font-size, like the icon font they replace. */
+.svg-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    height: 1em;
+    width: auto;
+    fill: currentColor;
+    vertical-align: -0.125em;
+    overflow: visible;
+}
+
+/* Holds the <symbol> definitions. It must stay in the layout (not display: none)
+   so that <use> can reference it in every browser. */
+.icon-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 /* Stronger focus styles for keyboard accessibility */
 a:focus, button:focus, .btn:focus, .hamburger:focus, .theme-toggle:focus {
     outline: 3px solid rgba(0, 238, 255, 0.6);
@@ -430,12 +451,12 @@ nav {
     box-shadow: 0 0 15px var(--accent-color);
 }
 
-.social-icons i {
+.social-icons .svg-icon {
     color: var(--text-primary);
     font-size: 1.2rem;
 }
 
-.social-icons a:hover i {
+.social-icons a:hover .svg-icon {
     color: var(--primary-dark);
 }
 
@@ -509,7 +530,7 @@ nav {
     gap: 10px; 
 }
 
-.cv-btn i {
+.cv-btn .svg-icon {
     font-size: 1.1em;
 }
 
@@ -556,7 +577,7 @@ nav {
     margin-bottom: var(--spacing-s);
 }
 
-.contact-item i {
+.contact-item .svg-icon {
     color: var(--accent-color);
     font-size: 1.2rem;
     margin-right: var(--spacing-s);
@@ -795,7 +816,7 @@ nav {
     justify-content: center;
 }
 
-.timeline-icon i {
+.timeline-icon .svg-icon {
     color: var(--accent-color);
     font-size: 1.2rem;
 }
@@ -894,7 +915,7 @@ nav {
     flex-shrink: 0;
 }
 
-.certification-logo i {
+.certification-logo .svg-icon {
     color: var(--primary-dark);
     font-size: 1.8rem;
 }
@@ -965,7 +986,7 @@ nav {
     flex-shrink: 0;
 }
 
-.achievement-icon i {
+.achievement-icon .svg-icon {
     font-size: 1.5rem;
 }
 
@@ -1024,7 +1045,7 @@ nav {
     flex-shrink: 0;
 }
 
-.training-icon i {
+.training-icon .svg-icon {
     color: var(--primary-dark);
     font-size: 1.5rem;
 }
@@ -1130,12 +1151,12 @@ nav {
     font-size: var(--fs-xs);
 }
 
-.read-more i {
+.read-more .svg-icon {
     margin-left: 5px;
     transition: transform 0.3s ease;
 }
 
-.read-more:hover i {
+.read-more:hover .svg-icon {
     transform: translateX(3px);
 }
 
@@ -1192,7 +1213,7 @@ nav {
     flex-shrink: 0;
 }
 
-.contact-info-item .icon i {
+.contact-info-item .icon .svg-icon {
     color: var(--primary-dark);
     font-size: 1.5rem;
 }
@@ -1294,7 +1315,7 @@ nav {
     display: none;
 }
 
-.form-status i {
+.form-status .svg-icon {
     margin-top: 2px;
     font-size: var(--fs-s);
 }
@@ -1307,7 +1328,7 @@ nav {
     border-left-color: var(--success-color);
 }
 
-.form-status-success i {
+.form-status-success .svg-icon {
     color: var(--success-color);
 }
 
@@ -1315,7 +1336,7 @@ nav {
     border-left-color: var(--error-color);
 }
 
-.form-status-error i {
+.form-status-error .svg-icon {
     color: var(--error-color);
 }
 
@@ -1368,12 +1389,12 @@ footer {
     transform: translateY(-3px);
 }
 
-.footer-social i {
+.footer-social .svg-icon {
     color: var(--text-primary);
     font-size: 1.2rem;
 }
 
-.footer-social a:hover i {
+.footer-social a:hover .svg-icon {
     color: var(--primary-dark);
 }
 
@@ -1432,12 +1453,12 @@ footer {
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.8);
 }
 
-.theme-toggle i {
+.theme-toggle .svg-icon {
     color: var(--accent-color);
     font-size: 1.5rem;
 }
 
-.theme-toggle .fa-sun {
+.theme-toggle .theme-icon-sun {
     display: none;
 }
 
@@ -1624,7 +1645,7 @@ footer {
         left: 0;
     }
 
-    .timeline-icon i {
+    .timeline-icon .svg-icon {
         font-size: 0.9rem;
     }
 
@@ -1705,7 +1726,7 @@ footer {
         height: 40px;
     }
 
-    .theme-toggle i {
+    .theme-toggle .svg-icon {
         font-size: 1.2rem;
     }
 

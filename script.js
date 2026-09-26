@@ -4,8 +4,8 @@ const navLinks = document.querySelector('.nav-links');
 const hamburger = document.querySelector('.hamburger');
 const navLinksItems = document.querySelectorAll('.nav-links li');
 const themeToggle = document.querySelector('.theme-toggle');
-const moonIcon = document.querySelector('.fa-moon');
-const sunIcon = document.querySelector('.fa-sun');
+const moonIcon = document.querySelector('.theme-icon-moon');
+const sunIcon = document.querySelector('.theme-icon-sun');
 const contactForm = document.getElementById('contact-form');
 const yearElement = document.getElementById('current-year');
 
@@ -120,10 +120,17 @@ if (contactForm) {
     const submitLabel = submitButton ? submitButton.textContent : '';
 
     // Built with DOM APIs only, so what the visitor typed is never parsed as HTML
-    const showStatus = (type, iconClass, text) => {
-        const icon = document.createElement('i');
-        icon.className = iconClass;
+    // Icons come from the SVG sprite in index.html
+    const showStatus = (type, iconName, text) => {
+        const svgNs = 'http://www.w3.org/2000/svg';
+        const icon = document.createElementNS(svgNs, 'svg');
+        icon.setAttribute('class', 'svg-icon');
+        icon.setAttribute('viewBox', '0 0 512 512');
         icon.setAttribute('aria-hidden', 'true');
+        icon.setAttribute('focusable', 'false');
+        const use = document.createElementNS(svgNs, 'use');
+        use.setAttribute('href', '#icon-' + iconName);
+        icon.appendChild(use);
 
         const message = document.createElement('p');
         message.textContent = text;
@@ -142,7 +149,7 @@ if (contactForm) {
         const isBlank = ['name', 'email', 'subject', 'message']
             .some(field => !String(data.get(field)).trim());
         if (isBlank) {
-            showStatus('error', 'fas fa-exclamation-circle', 'Please fill out all fields.');
+            showStatus('error', 'exclamation-circle', 'Please fill out all fields.');
             return;
         }
 
@@ -163,10 +170,10 @@ if (contactForm) {
             }
 
             contactForm.reset();
-            showStatus('success', 'fas fa-check-circle',
+            showStatus('success', 'check-circle',
                 `Thank you, ${name}! Your message has been sent and I'll get back to you soon.`);
         } catch (err) {
-            showStatus('error', 'fas fa-exclamation-circle',
+            showStatus('error', 'exclamation-circle',
                 'Sorry, your message could not be sent. Please try again in a moment, or use the contact details next to this form.');
         } finally {
             submitButton.disabled = false;
