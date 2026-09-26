@@ -12,8 +12,15 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
-    # Only what the site really uses is allowed: its own files and Google Fonts (CSS + font
-    # files). Icons are inline SVG, so no icon host is needed. The contact form posts to the
-    # same origin (Netlify Forms). If you add a new third-party script, font or embed, add
-    # its host here or the browser will block it.
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+    # The site is fully self-contained: fonts and icons are served from the site itself, so
+    # only its own files are allowed. The contact form posts to the same origin (Netlify
+    # Forms). If you add a third-party script, font or embed, add its host here or the
+    # browser will block it.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+
+# Font files never change once published (if you ever replace one, give the new file a new
+# name), so browsers may keep them for a year without asking the server again.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
