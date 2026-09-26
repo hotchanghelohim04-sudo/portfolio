@@ -892,6 +892,11 @@ nav {
     margin-bottom: 5px;
 }
 
+/* A card without an issuer line keeps its title vertically centred */
+.certification-content h3:last-child {
+    margin-bottom: 0;
+}
+
 .certification-content p {
     color: var(--text-muted);
     font-size: var(--fs-xs);
