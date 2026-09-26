@@ -745,6 +745,11 @@ nav {
     background-color: var(--tertiary-dark);
     border-radius: var(--border-radius);
     padding: var(--spacing-s);
+    /* Cards in a row share the same height: centre the label so it stays in the middle
+       even when a neighbour wraps onto two lines. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     transition: var(--transition);
     cursor: default;
@@ -772,6 +777,7 @@ nav {
     color: var(--text-secondary);
     font-weight: 500;
     font-size: var(--fs-xs);
+    line-height: 1.6rem; /* same card height and line spacing as before the label was centred */
     overflow-wrap: anywhere; /* safety net for enlarged text: never clip a skill name */
 }
 
