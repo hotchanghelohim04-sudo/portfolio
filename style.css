@@ -569,6 +569,22 @@ nav {
     overflow-wrap: anywhere; /* long e-mail addresses must wrap instead of widening the page on mobile */
 }
 
+/* E-mail, phone and LinkedIn links keep the surrounding text colour but are underlined,
+   so they are recognisable as links without relying on colour alone. */
+.contact-item a,
+.contact-info-item .text a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.contact-item a:hover,
+.contact-info-item .text a:hover {
+    color: var(--accent-color);
+}
+
 /* ====================
    Skills Section
    ==================== */
