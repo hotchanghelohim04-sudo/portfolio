@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,8 @@
     <!-- SEO -->
     <meta name="description" content="Portfolio of Hotchang Sappi Helohim Krool: cybersecurity analyst and penetration tester from Douala, Cameroon. Skills, certifications and contact.">
     <meta name="author" content="Hotchang Sappi Helohim Krool">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#04060d">
+    <meta name="color-scheme" content="dark light">
     <link rel="canonical" href="https://hotchanghelohimportofolio2.netlify.app/">
     <link rel="icon" href="favicon.ico" sizes="any">
 
@@ -53,660 +54,461 @@
     }
     </script>
 
-    <!-- Performance: fetch the fonts right away instead of waiting for the stylesheet (crossorigin is required for fonts) -->
-    <link rel="preload" href="assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-500-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Performance: fetch the two fonts used above the fold right away (crossorigin is required for fonts) -->
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+    <!-- Applies the saved theme before the first paint (no flash) -->
+    <script src="theme-init.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
     <!-- Icon sprite: only the icons this page uses. Use one with
-         <svg class="svg-icon" viewBox="..."><use href="#icon-NAME"></use></svg> -->
+         <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-NAME"></use></svg> -->
     <svg class="icon-sprite" aria-hidden="true" focusable="false">
-        <symbol id="icon-briefcase" viewBox="0 0 512 512"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></symbol>
-        <symbol id="icon-check-circle" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol>
-        <symbol id="icon-envelope" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
-        <symbol id="icon-exclamation-circle" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></symbol>
-        <symbol id="icon-file-download" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></symbol>
-        <symbol id="icon-github" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
-        <symbol id="icon-google" viewBox="0 0 488 512"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></symbol>
-        <symbol id="icon-graduation-cap" viewBox="0 0 640 512"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></symbol>
-        <symbol id="icon-linkedin" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></symbol>
-        <symbol id="icon-map-marker-alt" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
-        <symbol id="icon-moon" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></symbol>
-        <symbol id="icon-network-wired" viewBox="0 0 640 512"><path d="M256 64H384v64H256V64zM240 0c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h48v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H240c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H192V288H448v32H400c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H560c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H512V288h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V192h48c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H240zM96 448V384H224v64H96zm320-64H544v64H416V384z"/></symbol>
-        <symbol id="icon-phone" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></symbol>
-        <symbol id="icon-school" viewBox="0 0 640 512"><path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H256V416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"/></symbol>
-        <symbol id="icon-shield-alt" viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z"/></symbol>
-        <symbol id="icon-sun" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></symbol>
-        <symbol id="icon-user-ninja" viewBox="0 0 448 512"><path d="M224 256c-57.2 0-105.6-37.5-122-89.3c-1.1 1.3-2.2 2.6-3.5 3.8c-15.8 15.8-38.8 20.7-53.6 22.1c-8.1 .8-14.6-5.7-13.8-13.8c1.4-14.7 6.3-37.8 22.1-53.6c5.8-5.8 12.6-10.1 19.6-13.4c-7-3.2-13.8-7.6-19.6-13.4C37.4 82.7 32.6 59.7 31.1 44.9c-.8-8.1 5.7-14.6 13.8-13.8c14.7 1.4 37.8 6.3 53.6 22.1c4.8 4.8 8.7 10.4 11.7 16.1C131.4 28.2 174.4 0 224 0c70.7 0 128 57.3 128 128s-57.3 128-128 128zM0 482.3C0 399.5 56.4 330 132.8 309.9c6-1.6 12.2 .9 15.9 5.8l62.5 83.3c6.4 8.5 19.2 8.5 25.6 0l62.5-83.3c3.7-4.9 9.9-7.4 15.9-5.8C391.6 330 448 399.5 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM160 96c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H160z"/></symbol>
-        <symbol id="icon-user-secret" viewBox="0 0 448 512"><path d="M224 16c-6.7 0-10.8-2.8-15.5-6.1C201.9 5.4 194 0 176 0c-30.5 0-52 43.7-66 89.4C62.7 98.1 32 112.2 32 128c0 14.3 25 27.1 64.6 35.9c-.4 4-.6 8-.6 12.1c0 17 3.3 33.2 9.3 48H45.4C38 224 32 230 32 237.4c0 1.7 .3 3.4 1 5l38.8 96.9C28.2 371.8 0 423.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7c0-58.5-28.2-110.4-71.7-143L415 242.4c.6-1.6 1-3.3 1-5c0-7.4-6-13.4-13.4-13.4H342.7c6-14.8 9.3-31 9.3-48c0-4.1-.2-8.1-.6-12.1C391 155.1 416 142.3 416 128c0-15.8-30.7-29.9-78-38.6C324 43.7 302.5 0 272 0c-18 0-25.9 5.4-32.5 9.9c-4.8 3.3-8.8 6.1-15.5 6.1zm56 208H267.6c-16.5 0-31.1-10.6-36.3-26.2c-2.3-7-12.2-7-14.5 0c-5.2 15.6-19.9 26.2-36.3 26.2H168c-22.1 0-40-17.9-40-40V169.6c28.2 4.1 61 6.4 96 6.4s67.8-2.3 96-6.4V184c0 22.1-17.9 40-40 40zm-88 96l16 32L176 480 128 288l64 32zm128-32L272 480 240 352l16-32 64-32z"/></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol>
+        <symbol id="i-arrow-up-right-from-square" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></symbol>
+        <symbol id="i-award" viewBox="0 0 384 512"><path d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z"/></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 512 512"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></symbol>
+        <symbol id="i-calendar-days" viewBox="0 0 448 512"><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z"/></symbol>
+        <symbol id="i-check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></symbol>
+        <symbol id="i-circle-check" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol>
+        <symbol id="i-circle-exclamation" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></symbol>
+        <symbol id="i-code" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></symbol>
+        <symbol id="i-envelope" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+        <symbol id="i-file-arrow-down" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></symbol>
+        <symbol id="i-github" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
+        <symbol id="i-google" viewBox="0 0 488 512"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></symbol>
+        <symbol id="i-graduation-cap" viewBox="0 0 640 512"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></symbol>
+        <symbol id="i-layer-group" viewBox="0 0 576 512"><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></symbol>
+        <symbol id="i-location-dot" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+        <symbol id="i-lock" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></symbol>
+        <symbol id="i-network-wired" viewBox="0 0 640 512"><path d="M256 64H384v64H256V64zM240 0c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h48v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H240c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H192V288H448v32H400c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H560c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H512V288h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V192h48c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H240zM96 448V384H224v64H96zm320-64H544v64H416V384z"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></symbol>
+        <symbol id="i-school" viewBox="0 0 640 512"><path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H256V416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"/></symbol>
+        <symbol id="i-screwdriver-wrench" viewBox="0 0 512 512"><path d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></symbol>
+        <symbol id="i-shield-halved" viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></symbol>
+        <symbol id="i-user-ninja" viewBox="0 0 448 512"><path d="M224 256c-57.2 0-105.6-37.5-122-89.3c-1.1 1.3-2.2 2.6-3.5 3.8c-15.8 15.8-38.8 20.7-53.6 22.1c-8.1 .8-14.6-5.7-13.8-13.8c1.4-14.7 6.3-37.8 22.1-53.6c5.8-5.8 12.6-10.1 19.6-13.4c-7-3.2-13.8-7.6-19.6-13.4C37.4 82.7 32.6 59.7 31.1 44.9c-.8-8.1 5.7-14.6 13.8-13.8c14.7 1.4 37.8 6.3 53.6 22.1c4.8 4.8 8.7 10.4 11.7 16.1C131.4 28.2 174.4 0 224 0c70.7 0 128 57.3 128 128s-57.3 128-128 128zM0 482.3C0 399.5 56.4 330 132.8 309.9c6-1.6 12.2 .9 15.9 5.8l62.5 83.3c6.4 8.5 19.2 8.5 25.6 0l62.5-83.3c3.7-4.9 9.9-7.4 15.9-5.8C391.6 330 448 399.5 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM160 96c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H160z"/></symbol>
+        <symbol id="i-user-secret" viewBox="0 0 448 512"><path d="M224 16c-6.7 0-10.8-2.8-15.5-6.1C201.9 5.4 194 0 176 0c-30.5 0-52 43.7-66 89.4C62.7 98.1 32 112.2 32 128c0 14.3 25 27.1 64.6 35.9c-.4 4-.6 8-.6 12.1c0 17 3.3 33.2 9.3 48H45.4C38 224 32 230 32 237.4c0 1.7 .3 3.4 1 5l38.8 96.9C28.2 371.8 0 423.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7c0-58.5-28.2-110.4-71.7-143L415 242.4c.6-1.6 1-3.3 1-5c0-7.4-6-13.4-13.4-13.4H342.7c6-14.8 9.3-31 9.3-48c0-4.1-.2-8.1-.6-12.1C391 155.1 416 142.3 416 128c0-15.8-30.7-29.9-78-38.6C324 43.7 302.5 0 272 0c-18 0-25.9 5.4-32.5 9.9c-4.8 3.3-8.8 6.1-15.5 6.1zm56 208H267.6c-16.5 0-31.1-10.6-36.3-26.2c-2.3-7-12.2-7-14.5 0c-5.2 15.6-19.9 26.2-36.3 26.2H168c-22.1 0-40-17.9-40-40V169.6c28.2 4.1 61 6.4 96 6.4s67.8-2.3 96-6.4V184c0 22.1-17.9 40-40 40zm-88 96l16 32L176 480 128 288l64 32zm128-32L272 480 240 352l16-32 64-32z"/></symbol>
     </svg>
 
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="container">
-            <nav aria-label="Main">
-                <div class="logo">
-                    <a href="#home"><span>&lt;</span> TheCrownedHacker <span>/&gt;</span></a>
-                </div>
-                <!-- The button comes before the list so Tab reaches the links right after opening the menu -->
-                <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
+    <!-- Decorative layers: reading progress, animated aurora background, cursor light -->
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="ambient" aria-hidden="true">
+        <span class="ambient-blob blob-a"></span>
+        <span class="ambient-blob blob-b"></span>
+        <span class="ambient-blob blob-c"></span>
+        <span class="ambient-grid"></span>
+    </div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Main">
+            <a class="brand" href="#home" aria-label="TheCrownedHacker, back to top">
+                <span class="brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span>
+                <span class="brand-text"><span class="brand-bracket">&lt;</span>TheCrownedHacker<span class="brand-bracket">/&gt;</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="nav-pill" aria-hidden="true"></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button type="button" class="icon-btn theme-toggle" aria-label="Switch to light theme">
+                    <svg class="icon icon-moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+                    <svg class="icon icon-sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
                 </button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <!--<li><a href="#projects">Projects</a></li>-->
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <!--<li><a href="#article">Article</a></li>-->
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+                <button type="button" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <main id="main" tabindex="-1">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero" aria-label="Introduction">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hotchang Sappi Helohim Krool</h1>
-                    <p class="hero-role">Bachelor Degree in Computer and Network Security | Information Security Analyst | Certified Cybersecurity | Penetration Tester</p>
-                    <p>Welcome to my cybersecurity portfolio. I'm passionate about red and blue teaming and penetration testing.</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn primary-btn">Contact me</a>
-                        <a href="assets/Mon_Cv.pdf" download="Mon_CV.pdf" class="btn cv-btn">
-                            <svg class="svg-icon" viewBox="0 0 384 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-file-download"></use></svg> Download CV
-                        </a>
-                        <!--<a href="#projects" class="btn secondary-btn">View projects</a>-->
+        <!-- ============ Hero ============ -->
+        <section id="home" class="hero" aria-label="Introduction">
+            <canvas class="hero-canvas" aria-hidden="true"></canvas>
+            <div class="hero-vignette" aria-hidden="true"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-chip"><span class="pulse-dot" aria-hidden="true"></span>Cybersecurity Analyst<span class="chip-sep" aria-hidden="true">/</span>Douala, Cameroon</p>
+                    <h1><span class="h1-line">Hotchang Sappi</span> <span class="h1-line h1-grad">Helohim Krool</span></h1>
+                    <ul class="role-list" aria-label="Roles and education">
+                        <li>Bachelor Degree in Computer and Network Security</li>
+                        <li>Information Security Analyst</li>
+                        <li>Certified Cybersecurity</li>
+                        <li>Penetration Tester</li>
+                    </ul>
+                    <p class="hero-lede">Welcome to my cybersecurity portfolio. I'm passionate about red and blue teaming and penetration testing.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contact" data-magnetic><span>Contact me</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+                        <a class="btn btn-ghost" href="assets/Mon_Cv.pdf" download="Mon_CV.pdf"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-file-arrow-down"></use></svg><span>Download CV</span></a>
                     </div>
-                    <div class="social-icons" role="group" aria-label="Social links">
-                        <a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg class="svg-icon" viewBox="0 0 448 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
-                        <a href="https://github.com/hotchanghelohim04-sudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg class="svg-icon" viewBox="0 0 496 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a>
-                        <a href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile (opens in a new tab)"><svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg></a>
+                    <div class="socials" role="group" aria-label="Social links">
+                        <a class="social-link" href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a>
+                        <a class="social-link" href="https://github.com/hotchanghelohim04-sudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-github"></use></svg></a>
+                        <a class="social-link" href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile (opens in a new tab)"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <!-- Hero image: loaded first (LCP), two sizes for normal and high-density screens -->
-                    <img src="assets/profile-800.jpg"
-                         srcset="assets/profile-400.jpg 400w, assets/profile-800.jpg 800w"
-                         sizes="(max-width: 900px) 280px, 350px"
-                         width="800" height="800"
-                         fetchpriority="high" decoding="async"
-                         alt="Portrait of Hotchang Sappi Helohim Krool in a black jacket with gold buttons" class="profile-pic">
+
+                <div class="hero-visual">
+                    <div class="portrait" data-tilt>
+                        <span class="portrait-glow" aria-hidden="true"></span>
+                        <span class="portrait-ring" aria-hidden="true"></span>
+                        <div class="portrait-frame">
+                            <!-- Hero image: loaded first (LCP), two sizes for normal and high-density screens -->
+                            <img src="assets/profile-800.jpg"
+                                 srcset="assets/profile-400.jpg 400w, assets/profile-600.jpg 600w, assets/profile-800.jpg 800w"
+                                 sizes="(max-width: 960px) min(22rem, 100vw), 26rem"
+                                 width="800" height="800"
+                                 fetchpriority="high" decoding="async"
+                                 alt="Portrait of Hotchang Sappi Helohim Krool in a black jacket with gold buttons" class="profile-pic">
+                            <span class="scan" aria-hidden="true"></span>
+                        </div>
+                        <span class="hud hud-tl" aria-hidden="true"></span>
+                        <span class="hud hud-tr" aria-hidden="true"></span>
+                        <span class="hud hud-bl" aria-hidden="true"></span>
+                        <span class="hud hud-br" aria-hidden="true"></span>
+                        <span class="float-chip fc-1" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg>ISC2 CC</span>
+                        <span class="float-chip fc-2" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-lock"></use></svg>ISO 27001</span>
+                        <span class="float-chip fc-3" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>NIST CSF 2.0</span>
+                    </div>
+
+                    <div class="terminal" data-tilt aria-hidden="true">
+                        <div class="terminal-bar"><span class="dots"><i></i><i></i><i></i></span><span class="terminal-title">~/portfolio - zsh</span></div>
+                        <div class="terminal-body">
+                            <p class="tl tl-cmd"><span class="prompt">$</span> <span class="typed">whoami</span></p>
+                            <p class="tl tl-out">hotchang-sappi-helohim-krool</p>
+                            <p class="tl tl-cmd"><span class="prompt">$</span> <span class="typed">cat focus.txt</span></p>
+                            <p class="tl tl-out">penetration-testing &middot; network-security &middot; incident-response</p>
+                            <p class="tl tl-cmd"><span class="prompt">$</span> <span class="typed">ls certifications | wc -l</span></p>
+                            <p class="tl tl-out tl-count">12</p>
+                            <p class="tl tl-cmd tl-last"><span class="prompt">$</span> <span class="caret"></span></p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <a class="scroll-cue" href="#about" aria-label="Scroll down to the About section"><span class="scroll-mouse" aria-hidden="true"><span></span></span></a>
+        </section>
+
+        <!-- Keywords ribbon (decorative: the same skills are listed in the Skills section) -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <ul>
+                    <li>Penetration Testing</li><li>Ethical Hacking</li><li>Network Security</li><li>Incident Response</li><li>SIEM</li><li>OWASP Top 10</li><li>NIST CSF 2.0</li><li>ISO 27001</li><li>Cloud Security</li>
+                </ul>
+                <ul>
+                    <li>Penetration Testing</li><li>Ethical Hacking</li><li>Network Security</li><li>Incident Response</li><li>SIEM</li><li>OWASP Top 10</li><li>NIST CSF 2.0</li><li>ISO 27001</li><li>Cloud Security</li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about" aria-labelledby="about-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="about-title">About Me</h2>
-                <div class="underline"></div>
+        <!-- ============ At a glance ============ -->
+        <section class="stats" aria-label="At a glance">
+            <div class="container">
+                <ul class="stats-grid" data-stagger>
+                    <li class="stat card" data-reveal data-spotlight><svg class="icon stat-icon" aria-hidden="true" focusable="false"><use href="#i-award"></use></svg><p class="stat-num"><span data-count="12">12</span></p><p class="stat-label">Certifications</p></li>
+                    <li class="stat card" data-reveal data-spotlight><svg class="icon stat-icon" aria-hidden="true" focusable="false"><use href="#i-layer-group"></use></svg><p class="stat-num"><span data-count="25">25</span></p><p class="stat-label">Skills &amp; tools</p></li>
+                    <li class="stat card" data-reveal data-spotlight><svg class="icon stat-icon" aria-hidden="true" focusable="false"><use href="#i-calendar-days"></use></svg><p class="stat-num"><span data-count="3" data-suffix="+">3+</span></p><p class="stat-label">Years of experience</p></li>
+                </ul>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a passionate Cybersecurity professional with a strong focus on Penetration Testing. My expertise extends to network security, risk assessment analysis, operation security, recovery after disaster in enterprise and many other qualifications.</p>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-envelope"></use></svg>
-                        <span><a href="mailto:hotchanghelohim04@gmail.com">hotchanghelohim04@gmail.com</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
-                        <span><a href="tel:+237690546892">+237 690546892</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <svg class="svg-icon" viewBox="0 0 384 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-map-marker-alt"></use></svg>
-                        <span>Douala, Cameroon</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills" aria-labelledby="skills-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="skills-title">My Skills</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Security</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><span>Cybersecurity</span></div>
-                        <div class="skill-item"><span>Ethical Hacking</span></div>
-                        <div class="skill-item"><span>Network Security</span></div>
-                        <div class="skill-item"><span>Cloud Security</span></div>
-                        <div class="skill-item"><span>Incident Response</span></div>
-                        <div class="skill-item"><span>SIEM</span></div>
-                        <div class="skill-item"><span>Penetration Testing</span></div>
-                        <div class="skill-item"><span>OWASP Top 10</span></div>
-                        <div class="skill-item"><span>NIST CSF 2.0</span></div>
-                        <div class="skill-item"><span>ISO 27001</span></div>
+        <!-- ============ About ============ -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span>01</span>About</p>
+                    <h2 id="about-title">About Me</h2>
+                </header>
+                <div class="about-grid" data-stagger>
+                    <div class="card about-card" data-reveal data-spotlight>
+                        <p class="about-text">I am a passionate Cybersecurity professional with a strong focus on Penetration Testing. My expertise extends to network security, risk assessment analysis, operation security, recovery after disaster in enterprise and many other qualifications.</p>
+                        <ul class="tag-list" aria-label="Focus areas">
+                            <li>Penetration Testing</li>
+                            <li>Network Security</li>
+                            <li>Risk Assessment</li>
+                            <li>Operation Security</li>
+                            <li>Disaster Recovery</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming & Scripting</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><span>HTML</span></div>
-                        <div class="skill-item"><span>CSS</span></div>
-                        <div class="skill-item"><span>JavaScript</span></div>
-                        <div class="skill-item"><span>Assembly</span></div>
-                        <div class="skill-item"><span>PHP</span></div>
-                        <div class="skill-item"><span>React</span></div>
-                        <div class="skill-item"><span>Bash</span></div>
-                        <div class="skill-item"><span>Java</span></div>
-                        <div class="skill-item"><span>Python</span></div>
-                        <div class="skill-item"><span>C</span></div>
-                        <div class="skill-item"><span>C++</span></div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><span>Docker</span></div>
-                        <div class="skill-item"><span>MySQL</span></div>
-                        <div class="skill-item"><span>Oracle SQL</span></div>
-                        <div class="skill-item"><span>GitHub</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience" aria-labelledby="experience-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="experience-title">Experience</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-briefcase"></use></svg>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Application Tester</h3>
-                        <h4>Katika Blockchain</h4>
-                        <span class="timeline-date">Apr 2023 – Present</span>
-                        <ul>
-                            <li>run tests on the company's wallet application to check for typos and details that could spoil the user experience.</li>
-                            <li>Detect vulnerabilities in the KYC design process of the Katika Wallet application.</li>
+                    <div class="card info-card" data-reveal data-spotlight>
+                        <h3 class="sr-only">Contact details</h3>
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-envelope"></use></svg></span>
+                                <span class="info-body"><span class="info-label">Email</span><a href="mailto:hotchanghelohim04@gmail.com">hotchanghelohim04@gmail.com</a></span>
+                                <button type="button" class="copy-btn" data-copy="hotchanghelohim04@gmail.com" data-copy-label="Email address" aria-label="Copy email address"><svg class="icon icon-copy" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg><svg class="icon icon-done" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></button>
+                            </li>
+                            <li>
+                                <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg></span>
+                                <span class="info-body"><span class="info-label">Phone</span><a href="tel:+237690546892">+237 690546892</a></span>
+                                <button type="button" class="copy-btn" data-copy="+237 690546892" data-copy-label="Phone number" aria-label="Copy phone number"><svg class="icon icon-copy" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg><svg class="icon icon-done" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></button>
+                            </li>
+                            <li>
+                                <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-location-dot"></use></svg></span>
+                                <span class="info-body"><span class="info-label">Location</span><span>Douala, Cameroon</span></span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education" aria-labelledby="education-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="education-title">Education</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-graduation-cap"></use></svg>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Bachelor in Network and Computer Security</h3>
-                        <h4>French university KEYCE computer science and artificial intelligence</h4>
-                        <span class="timeline-date">2026</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-school"></use></svg>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Terminal D</h3>
-                        <h4>Nkoteng High School</h4>
-                        <span class="timeline-date">2023</span>
-                        <p>Mention</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-school"></use></svg>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>First Class D</h3>
-                        <h4>Nkoteng High School</h4>
-                        <span class="timeline-date">2022</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-school"></use></svg>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Spanish Third Grade</h3>
-                        <h4>Nkoteng High School</h4>
-                        <span class="timeline-date">2018</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications" aria-labelledby="certifications-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="certifications-title">Certifications</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity (CC)</h3>
-                        <p>ISC2</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 488 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-google"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Cybersecurity Fundamentals</h3>
-                        <p>Google</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity (CC) Domain 1 : Security principles</h3>
-                        <p>ISC2</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity (CC) Domain 2 : Incident Response, Business Continuity and Disaster Recovery Concepts</h3>
-                        <p>ISC2</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity (CC) Domain 3 : Access Control Concepts</h3>
-                        <p>ISC2</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity (CC) Domain 4 : Network Security</h3>
-                        <p>ISC2</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity (CC) Domain 5 : Security Operations</h3>
-                        <p>ISC2</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-network-wired"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Introduction to Cybersecurity</h3>
-                        <p>Cisco NetAcad</p>
-                    </div>
-                </div>
-                 <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-network-wired"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Phishing Prevention Specialist (CPPS)</h3>
-                        <p>Hack & Fix</p>
-                    </div>
-                </div>
-                 <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 640 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-network-wired"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Certified Cybersecurity Starter Career (CCSC)</h3>
-                        <p>Hack & Fix</p>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 448 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-user-secret"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Junior Pentester</h3>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-logo">
-                        <svg class="svg-icon" viewBox="0 0 448 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-user-ninja"></use></svg>
-                    </div>
-                    <div class="certification-content">
-                        <h3>Junior Ethical Hacker</h3>
-                        <p>Cisco NetAcad</p>
-                    </div>
+        <!-- ============ Skills ============ -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span>02</span>Skills</p>
+                    <h2 id="skills-title">My Skills</h2>
+                </header>
+                <div class="skills-bento" data-stagger>
+                    <article class="card skill-card skill-security" data-reveal data-spotlight>
+                        <header class="skill-head"><span class="skill-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><h3>Security</h3><span class="skill-count" aria-hidden="true">10</span></header>
+                        <ul class="chips">
+                            <li class="chip">Cybersecurity</li>
+                            <li class="chip">Ethical Hacking</li>
+                            <li class="chip">Network Security</li>
+                            <li class="chip">Cloud Security</li>
+                            <li class="chip">Incident Response</li>
+                            <li class="chip">SIEM</li>
+                            <li class="chip">Penetration Testing</li>
+                            <li class="chip">OWASP Top 10</li>
+                            <li class="chip chip-standard">NIST CSF 2.0</li>
+                            <li class="chip chip-standard">ISO 27001</li>
+                        </ul>
+                    </article>
+                    <article class="card skill-card skill-code" data-reveal data-spotlight>
+                        <header class="skill-head"><span class="skill-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"></use></svg></span><h3>Programming &amp; Scripting</h3><span class="skill-count" aria-hidden="true">11</span></header>
+                        <ul class="chips">
+                            <li class="chip">HTML</li>
+                            <li class="chip">CSS</li>
+                            <li class="chip">JavaScript</li>
+                            <li class="chip">Assembly</li>
+                            <li class="chip">PHP</li>
+                            <li class="chip">React</li>
+                            <li class="chip">Bash</li>
+                            <li class="chip">Java</li>
+                            <li class="chip">Python</li>
+                            <li class="chip">C</li>
+                            <li class="chip">C++</li>
+                        </ul>
+                    </article>
+                    <article class="card skill-card skill-tools" data-reveal data-spotlight>
+                        <header class="skill-head"><span class="skill-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-screwdriver-wrench"></use></svg></span><h3>Tools &amp; Technologies</h3><span class="skill-count" aria-hidden="true">4</span></header>
+                        <ul class="chips">
+                            <li class="chip">Docker</li>
+                            <li class="chip">MySQL</li>
+                            <li class="chip">Oracle SQL</li>
+                            <li class="chip">GitHub</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Trainings & Courses Section 
-    <section id="trainings" class="trainings">
-        <div class="container">
-            <div class="section-header">
-                <h2>Trainings & Courses</h2>
-                <div class="underline"></div>
+        <!-- ============ Experience ============ -->
+        <section id="experience" class="section" aria-labelledby="experience-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span>03</span>Experience</p>
+                    <h2 id="experience-title">Experience</h2>
+                </header>
+                <ol class="timeline" data-timeline>
+                    <li class="tl-item card" data-reveal data-spotlight>
+                        <span class="tl-node" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-briefcase"></use></svg></span>
+                        <div class="tl-head"><h3>Application Tester</h3><span class="date-pill">Apr 2023 &ndash; Present</span></div>
+                        <p class="tl-org">Katika Blockchain</p>
+                        <ul class="check-list">
+                            <li>Run tests on the company's wallet application to check for typos and details that could spoil the user experience.</li>
+                            <li>Detect vulnerabilities in the KYC design process of the Katika Wallet application.</li>
+                        </ul>
+                    </li>
+                </ol>
             </div>
-            <div class="trainings-container">
-                <div class="trainings-list">
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fas fa-certificate" aria-hidden="true"></i>
+        </section>
+
+        <!-- ============ Education ============ -->
+        <section id="education" class="section" aria-labelledby="education-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span>04</span>Education</p>
+                    <h2 id="education-title">Education</h2>
+                </header>
+                <ol class="timeline" data-timeline>
+                    <li class="tl-item card" data-reveal data-spotlight>
+                        <span class="tl-node" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-graduation-cap"></use></svg></span>
+                        <div class="tl-head"><h3>Bachelor in Network and Computer Security</h3><span class="date-pill">2026</span></div>
+                        <p class="tl-org">French university KEYCE computer science and artificial intelligence</p>
+                    </li>
+                    <li class="tl-item card" data-reveal data-spotlight>
+                        <span class="tl-node" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"></use></svg></span>
+                        <div class="tl-head"><h3>Terminal D</h3><span class="date-pill">2023</span></div>
+                        <p class="tl-org">Nkoteng High School</p>
+                        <p class="tl-note">Mention</p>
+                    </li>
+                    <li class="tl-item card" data-reveal data-spotlight>
+                        <span class="tl-node" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"></use></svg></span>
+                        <div class="tl-head"><h3>First Class D</h3><span class="date-pill">2022</span></div>
+                        <p class="tl-org">Nkoteng High School</p>
+                    </li>
+                    <li class="tl-item card" data-reveal data-spotlight>
+                        <span class="tl-node" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"></use></svg></span>
+                        <div class="tl-head"><h3>Spanish Third Grade</h3><span class="date-pill">2018</span></div>
+                        <p class="tl-org">Nkoteng High School</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============ Certifications ============ -->
+        <section id="certifications" class="section" aria-labelledby="certifications-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span>05</span>Certifications</p>
+                    <h2 id="certifications-title">Certifications</h2>
+                </header>
+                <div class="cert-filters" role="group" aria-label="Filter certifications by issuer" data-reveal></div>
+                <p class="sr-only" id="cert-status" role="status" aria-live="polite"></p>
+                <ul class="cert-grid" data-stagger>
+                    <li class="card cert-card" data-issuer="ISC2" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity (CC)</h3><p class="cert-issuer">ISC2</p></div></li>
+                    <li class="card cert-card" data-issuer="Google" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-google"></use></svg></span><div class="cert-body"><h3>Cybersecurity Fundamentals</h3><p class="cert-issuer">Google</p></div></li>
+                    <li class="card cert-card" data-issuer="ISC2" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity (CC) Domain 1 : Security principles</h3><p class="cert-issuer">ISC2</p></div></li>
+                    <li class="card cert-card" data-issuer="ISC2" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity (CC) Domain 2 : Incident Response, Business Continuity and Disaster Recovery Concepts</h3><p class="cert-issuer">ISC2</p></div></li>
+                    <li class="card cert-card" data-issuer="ISC2" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity (CC) Domain 3 : Access Control Concepts</h3><p class="cert-issuer">ISC2</p></div></li>
+                    <li class="card cert-card" data-issuer="ISC2" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity (CC) Domain 4 : Network Security</h3><p class="cert-issuer">ISC2</p></div></li>
+                    <li class="card cert-card" data-issuer="ISC2" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity (CC) Domain 5 : Security Operations</h3><p class="cert-issuer">ISC2</p></div></li>
+                    <li class="card cert-card" data-issuer="Cisco NetAcad" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-network-wired"></use></svg></span><div class="cert-body"><h3>Introduction to Cybersecurity</h3><p class="cert-issuer">Cisco NetAcad</p></div></li>
+                    <li class="card cert-card" data-issuer="Hack &amp; Fix" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-network-wired"></use></svg></span><div class="cert-body"><h3>Certified Phishing Prevention Specialist (CPPS)</h3><p class="cert-issuer">Hack &amp; Fix</p></div></li>
+                    <li class="card cert-card" data-issuer="Hack &amp; Fix" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-network-wired"></use></svg></span><div class="cert-body"><h3>Certified Cybersecurity Starter Career (CCSC)</h3><p class="cert-issuer">Hack &amp; Fix</p></div></li>
+                    <li class="card cert-card" data-issuer="Other" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user-secret"></use></svg></span><div class="cert-body"><h3>Junior Pentester</h3></div></li>
+                    <li class="card cert-card" data-issuer="Cisco NetAcad" data-reveal data-spotlight><span class="cert-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-user-ninja"></use></svg></span><div class="cert-body"><h3>Junior Ethical Hacker</h3><p class="cert-issuer">Cisco NetAcad</p></div></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span>06</span>Contact</p>
+                    <h2 id="contact-title">Get In Touch</h2>
+                </header>
+                <div class="contact-grid" data-stagger>
+                    <div class="contact-cards">
+                        <div class="card contact-card" data-reveal data-spotlight>
+                            <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-envelope"></use></svg></span>
+                            <div class="contact-body"><h3>Email</h3><p><a href="mailto:hotchanghelohim04@gmail.com">hotchanghelohim04@gmail.com</a></p></div>
+                            <button type="button" class="copy-btn" data-copy="hotchanghelohim04@gmail.com" data-copy-label="Email address" aria-label="Copy email address"><svg class="icon icon-copy" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg><svg class="icon icon-done" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></button>
                         </div>
-                        <div class="training-content">
-                            <h3>Forage Cybersecurity Job Simulator</h3>
-                            <ul>
-                                <li>MasterCard</li>
-                                <li>Telestra</li>
-                                <li>Datacom</li>
-                                <li>ANZ</li>
-                                <li>AIG</li>
-                                <li>TCS</li>
-                                <li>PWC</li>
-                                <li>Commonwealth Bank</li>
-                            </ul>
+                        <div class="card contact-card" data-reveal data-spotlight>
+                            <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg></span>
+                            <div class="contact-body"><h3>Phone</h3><p><a href="tel:+237690546892">+237 690546892</a></p></div>
+                            <button type="button" class="copy-btn" data-copy="+237 690546892" data-copy-label="Phone number" aria-label="Copy phone number"><svg class="icon icon-copy" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg><svg class="icon icon-done" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></button>
+                        </div>
+                        <div class="card contact-card" data-reveal data-spotlight>
+                            <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></span>
+                            <div class="contact-body"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer">Connect with me<span class="sr-only"> on LinkedIn (opens in a new tab)</span></a></p></div>
+                            <span class="contact-go" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right-from-square"></use></svg></span>
+                        </div>
+                        <div class="card contact-card" data-reveal data-spotlight>
+                            <span class="info-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-location-dot"></use></svg></span>
+                            <div class="contact-body"><h3>Location</h3><p>Douala, Cameroon</p></div>
                         </div>
                     </div>
 
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fab fa-aws" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>AWS Educate</h3>
-                            <ul>
-                                <li>Specialized</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>TryHackMe Security Paths</h3>
-                            <ul>
-                                <li>Jr Penetration Tester</li>
-                                <li>Web Fundamentals</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fab fa-microsoft" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>Microsoft Learn Security</h3>
-                            <ul>
-                                <li>Linux command line and Shell</li>
-                                <li>Introduction to GitHub</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>SimpliLearn Training</h3>
-                            <ul>
-                                <li>CompTIA Network+</li>
-                                <li>Introduction to Cyber Security</li>
-                                <li>Linux Training</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fas fa-network-wired" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>Cisco NetAcad</h3>
-                            <ul>
-                                <li>CCNA: Introduction to Networks Training</li>
-                                <li>CCNA: Introduction to Cybersecurity</li>
-                                <li>CCEH: Certified Cisco Ethical Hacker</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>Udemy Security Courses</h3>
-                            <ul>
-                                <li>Complete Ethical Hacking Bootcamp</li>
-                                <li>Complete Ethical Hacking Course With ParrotOS 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="training-item">
-                        <div class="training-icon">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                        </div>
-                        <div class="training-content">
-                            <h3>EC-Council CodeRed</h3>
-                            <ul>
-                                <li>Top 100 Interesting Bugs</li>
-                                <li>Getting Started with IoT Security</li>
-                                <li>Introduction to Web Forensics</li>
-                                <li>Cybersecurity: Cloud Security</li>
-                            </ul>
-                        </div>
+                    <div class="card form-card" data-reveal data-spotlight>
+                        <!-- Handled by Netlify Forms: submissions are stored in the Netlify dashboard (Forms tab). -->
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
+                            <!-- Honeypot field: hidden from humans, bots fill it and get discarded as spam -->
+                            <div class="sr-only" aria-hidden="true">
+                                <label>Leave this field empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+                            </div>
+                            <p class="form-note">All fields are required.</p>
+                            <div class="form-layout">
+                                <div class="form-col">
+                                    <div class="field">
+                                        <label for="name">Your name</label>
+                                        <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
+                                    </div>
+                                    <div class="field">
+                                        <label for="email">Your email</label>
+                                        <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required>
+                                    </div>
+                                    <div class="field">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" name="subject" maxlength="150" required>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="field field-message">
+                                        <label for="message">Your message</label>
+                                        <textarea id="message" name="message" maxlength="5000" rows="6" required></textarea>
+                                        <span class="counter" aria-hidden="true"><span id="message-count">0</span> / 5000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary"><span class="btn-label">Send Message</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg><span class="btn-spinner" aria-hidden="true"></span></button>
+                                <p class="form-secure"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-lock"></use></svg>Sent over an encrypted (HTTPS) connection</p>
+                            </div>
+                            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section> -->
-
-
-    <!-- Article Section
-    <section id="article" class="article">
-        <div class="container">
-            <div class="section-header">
-                <h2>Article</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="article-container">
-                <div class="article-grid">
-                    <div class="article-card">
-                        <div class="article-img">
-                            <img src="assets/Pixel_Poisoning.png" alt="Pixel Poisoning: Hacking Generative AI">
-                        </div>
-                        <div class="article-content">
-                            <h3>Pixel Poisoning: Hacking Generative AI</h3>
-                            <p>A fierce visual defense against generative AI — fight back with poisoned pixels, stealthy watermarks, and adversarial trickery.</p>
-                            <a href="https://infosecwriteups.com/%EF%B8%8F-pixel-poisoning-hacking-generative-ai-11f86cb73a30" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="article-card">
-                        <div class="article-img">
-                            <img src="assets/SQL.png" alt="Pixel Poisoning: Hacking Generative AI">
-                        </div>
-                        <div class="article-content">
-                            <h3>SQL Injection Exploitation Made Easy: A Practical Guide to SQLMAP</h3>
-                            <p>Learn how to exploit SQL injection vulnerabilities using SQLMAP, an automated penetration testing tool for database security assessment.</p>
-                            <a href="https://infosecwriteups.com/sql-injection-exploitation-made-easy-a-practical-guide-to-sqlmap-055b39a68a94" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="article-card">
-                        <div class="article-img">
-                            <img src="assets/Wifi.png" alt="Pixel Poisoning: Hacking Generative AI">
-                        </div>
-                        <div class="article-content">
-                            <h3>The Art of Wi-Fi Hacking & Protection with Aircrack-ng</h3>
-                            <p>A comprehensive guide to hacking and securing Wi-Fi networks using Aircrack-ng, covering practical attack techniques, encryption vulnerabilities, and prevention strategies.</p>
-                            <a href="https://infosecwriteups.com/the-art-of-wi-fi-hacking-protection-with-aircrack-ng-71828972cd6e" target="_blank" class="read-more">Read on Medium <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="article-cta">
-                    <a href="https://medium.com/@info.adityabhatt3010" target="_blank" class="btn primary-btn">View All Posts on Medium</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="contact-title">Get In Touch</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info-container">
-                    <div class="contact-info-item">
-                        <div class="icon">
-                            <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-envelope"></use></svg>
-                        </div>
-                        <div class="text">
-                            <h3>Email</h3>
-                            <p><a href="mailto:hotchanghelohim04@gmail.com">hotchanghelohim04@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon">
-                            <svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
-                        </div>
-                        <div class="text">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+237690546892">+237 690546892</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon">
-                            <svg class="svg-icon" viewBox="0 0 448 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
-                        </div>
-                        <div class="text">
-                            <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer">Connect with me<span class="sr-only"> on LinkedIn (opens in a new tab)</span></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <!-- Handled by Netlify Forms: submissions are stored in the Netlify dashboard (Forms tab). -->
-                    <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                        <input type="hidden" name="form-name" value="contact">
-                        <!-- Honeypot field: hidden from humans, bots fill it and get discarded as spam -->
-                        <div class="sr-only" aria-hidden="true">
-                            <label>Leave this field empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
-                        </div>
-                        <p class="form-note">All fields are required.</p>
-                        <div class="form-group">
-                            <label for="name">Your name</label>
-                            <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your email</label>
-                            <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" maxlength="150" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your message</label>
-                            <textarea id="message" name="message" maxlength="5000" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
-                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#home" aria-label="Back to top"><span>&lt;</span> TCH <span>/&gt;</span></a>
-                </div>
-                <div class="footer-social" role="group" aria-label="Social links">
-                    <a href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg class="svg-icon" viewBox="0 0 448 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
-                    <a href="https://github.com/hotchanghelohim04-sudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg class="svg-icon" viewBox="0 0 496 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg></a>
-                    <a href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile (opens in a new tab)"><svg class="svg-icon" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-shield-alt"></use></svg></a>
-                </div>
+            <div class="footer-top">
+                <a class="brand" href="#home" aria-label="TheCrownedHacker, back to top">
+                    <span class="brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></span>
+                    <span class="brand-text"><span class="brand-bracket">&lt;</span>TheCrownedHacker<span class="brand-bracket">/&gt;</span></span>
+                </a>
                 <nav class="footer-links" aria-label="Footer">
-                    <a href="#home">Home</a>
                     <a href="#about">About</a>
-                    <!--<a href="#projects">Projects</a>-->
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#certifications">Certifications</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <div class="footer-bottom">
-                    <p>&copy; <span id="current-year">2026</span> Hotchang Helohim. All Rights Reserved.</p>
+                <div class="socials" role="group" aria-label="Social links">
+                    <a class="social-link" href="https://www.linkedin.com/in/hotchang-sappi-helohim-krool-33b12b334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a>
+                    <a class="social-link" href="https://github.com/hotchanghelohim04-sudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-github"></use></svg></a>
+                    <a class="social-link" href="https://tryhackme.com/p/TheCrownedHacker" target="_blank" rel="noopener noreferrer" aria-label="TryHackMe profile (opens in a new tab)"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-halved"></use></svg></a>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Hotchang Helohim. All Rights Reserved.</p>
+                <a class="to-top" href="#home">Back to top <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up"></use></svg></a>
             </div>
         </div>
     </footer>
 
-    <!-- Theme toggle -->
-    <button type="button" class="theme-toggle" aria-label="Switch to light theme">
-        <svg class="svg-icon theme-icon-moon" viewBox="0 0 384 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-moon"></use></svg>
-        <svg class="svg-icon theme-icon-sun" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><use href="#icon-sun"></use></svg>
-    </button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>
