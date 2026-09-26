@@ -1220,8 +1220,22 @@ nav {
     box-shadow: var(--box-shadow);
 }
 
+.form-note {
+    color: var(--text-muted);
+    font-size: var(--fs-xs);
+    margin-bottom: var(--spacing-s);
+}
+
 .form-group {
     margin-bottom: var(--spacing-s);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-secondary);
+    font-size: var(--fs-xs);
+    font-weight: 500;
 }
 
 .form-group input, .form-group textarea {
